@@ -1,6 +1,57 @@
 /* =====================================================
    1. SCROLL FADE-UP ANIMATION
    ===================================================== */
+function downloadCV() {
+  const files = [
+    "Rajdeep_Singh.pdf",
+    "Rajdeep_Singh.docx"
+  ];
+
+  files.forEach((file, index) => {
+    setTimeout(() => {
+      const a = document.createElement("a");
+      a.href = file;
+      a.download = file;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }, index * 500); // delay important hai
+  });
+}
+// ===== GET AUDIO ELEMENT =====
+const clickSound = document.getElementById("clickSound");
+
+// ===== PLAY SOUND ON ANY CLICK =====
+document.addEventListener("click", () => {
+    if (clickSound) {
+        clickSound.currentTime = 0; // start from beginning
+        clickSound.play().catch(e => {
+            // browser may block sound until first interaction
+            console.log("Sound blocked until user interacts:", e);
+        });
+    }
+});
+
+// ===== DOWNLOAD CV FILES ON BUTTON CLICK =====
+const downloadBtn = document.getElementById("downloadBtn");
+if (downloadBtn) {
+    downloadBtn.addEventListener("click", (event) => {
+        event.stopPropagation(); // prevent double sound
+
+        const files = ["Rajdeep_Singh.pdf", "Rajdeep_Singh.docx"];
+        files.forEach((file, index) => {
+            setTimeout(() => {
+                const a = document.createElement("a");
+                a.href = file;
+                a.download = file;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+            }, index * 500); // 500ms delay between downloads
+        });
+    });
+}
+
 const faders = document.querySelectorAll(".fade-up");
 
 const fadeObserver = new IntersectionObserver(
