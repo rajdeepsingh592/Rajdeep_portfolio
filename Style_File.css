@@ -12,6 +12,115 @@
   --border:#2a2a2a;
   --shadow:0 20px 40px rgba(0,0,0,0.6);
 }
+/* ================= RESET ================= */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Times New Roman", Times, serif;
+}
+
+/* ================= BODY ================= */
+body{
+  background-color: #0b0b0b;
+  color: #ffffff;
+}
+
+/* ================= COMMON SECTION ================= */
+section{
+  padding: 60px 20px;
+}
+
+/* ================= HEADINGS ================= */
+h1{
+  font-size: clamp(32px, 4vw, 48px);
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+h2{
+  font-size: clamp(26px, 3vw, 36px);
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+h3{
+  font-size: clamp(18px, 2vw, 24px);
+  text-align: center;
+  margin-bottom: 6px;
+}
+
+/* ================= PARAGRAPH (IMPORTANT) ================= */
+p,
+.glass-card,
+.glass-card p{
+  text-align: justify;          /* left + right equal */
+  text-justify: inter-word;     /* proper word spacing */
+  line-height: 1.7;             /* equal line gap */
+  font-size: clamp(16px, 1.1vw, 18px);
+}
+
+/* ================= SECTION TITLE ================= */
+.section-title{
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* ================= GLASS CARD ================= */
+.glass-card{
+  max-width: 1100px;
+  margin: 15px auto;
+  padding: 25px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 14px;
+}
+
+/* ================= GRID LAYOUT ================= */
+.education-grid,
+.experience-grid,
+.skills-grid,
+.projects-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* ================= HERO ================= */
+#hero{
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-content h3{
+  margin-top: 10px;
+}
+
+/* ================= FOOTER ================= */
+footer{
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  background: #000;
+}
+
+/* ================= MOBILE FIX ================= */
+@media (max-width: 768px){
+  p,
+  .glass-card{
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  h1{
+    font-size: 28px;
+  }
+}
+
 /* =====================================================================
    2. GLOBAL RESET
    ===================================================================== */
@@ -489,5 +598,6 @@ footer{
   nav ul{ display:none; }
   .hero-content h1{ font-size:3rem; }
 }
+
 
 
