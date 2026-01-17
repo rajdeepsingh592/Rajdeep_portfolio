@@ -433,76 +433,51 @@ section{
    7. HERO
    ===================================================================== */
 /* ===== HERO SECTION ===== */
-#hero {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;   /* vertical center */
-  align-items: center;       /* horizontal center */
-  text-align: center;
-  padding-top: 70px;         /* navbar height ke according */
-  box-sizing: border-box;
-}
-
-/* ===== HERO CONTENT ===== */
-.hero-content {
-  max-width: 900px;
-}
-
-/* ===== HEADING ===== */
-.hero-content h1 {
-  font-size: 4.5rem;
-  font-weight: 900;
-  background: linear-gradient(90deg, var(--primary), var(--secondary));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.hero-content h3 {
-  margin-top: 1rem;          /* gap kam */
-  color: var(--text-muted);
-}
-
-/* ===== HERO IMAGE ===== */
 .hero-image {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 25px;
-  perspective: 1200px; /* 🔥 3D depth */
+  perspective: 1200px;
 }
 
+/* DEFAULT IMAGE STATE */
 .hero-image img {
   width: 500px;
   height: 500px;
   padding: 5px;
   border-radius: 8px;
   object-fit: contain;
-  object-position: center;
   background-color: #0a0015;
   border: 5px solid #7c3aed;
 
-  /* 🔥 Strong all-side shadow */
   box-shadow:
     0 25px 50px rgba(124, 58, 237, 0.6),
     0 0 60px rgba(124, 58, 237, 0.4);
 
-  transition: 
-    transform 0.45s ease,
-    box-shadow 0.45s ease;
+  transition: transform 0.45s ease, box-shadow 0.45s ease;
 }
 
-/* 🚀 HOVER 3D EFFECT */
-.hero-image img:hover {
-  transform:
-    translateY(-18px)
-    rotateX(6deg)
-    rotateY(-6deg)
-    scale(1.05);
+/* 🖥️ DESKTOP ONLY HOVER */
+@media (hover: hover) and (pointer: fine) {
+  .hero-image img:hover {
+    transform:
+      translateY(-18px)
+      rotateX(6deg)
+      rotateY(-6deg)
+      scale(1.05);
 
-  box-shadow:
-    0 45px 90px rgba(124, 58, 237, 0.85),
-    0 0 80px rgba(124, 58, 237, 0.6);
+    box-shadow:
+      0 45px 90px rgba(124, 58, 237, 0.85),
+      0 0 80px rgba(124, 58, 237, 0.6);
+  }
+}
+
+/* 📱 MOBILE RESET (IMPORTANT) */
+@media (hover: none) and (pointer: coarse) {
+  .hero-image img {
+    transform: none !important;
+  }
 }
 
 /* =====================================================================
