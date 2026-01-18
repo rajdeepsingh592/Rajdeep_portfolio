@@ -21,17 +21,10 @@ function downloadCV() {
 // ===== GET AUDIO ELEMENT =====
 const clickSound = document.getElementById("clickSound");
 
-// ===== PLAY SOUND ON ANY CLICK =====
 document.addEventListener("click", () => {
-    if (clickSound) {
-        clickSound.currentTime = 0; // start from beginning
-        clickSound.play().catch(e => {
-            // browser may block sound until first interaction
-            console.log("Sound blocked until user interacts:", e);
-        });
-    }
+  clickSound.currentTime = 0;
+  clickSound.play();
 });
-
 // ===== DOWNLOAD CV FILES ON BUTTON CLICK =====
 const downloadBtn = document.getElementById("downloadBtn");
 if (downloadBtn) {
